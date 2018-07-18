@@ -35,15 +35,26 @@ module.exports = function(grunt) {
           {
               expand: true,
               flatten: true,
-              src: ['fonts/Lato/*'],
-              dest: 'sphinx_rtd_theme/static/fonts/Lato',
+              src: ['fonts/Elena/*'],
+              dest: 'sphinx_rtd_theme/static/fonts/Elena/',
               filter: 'isFile'
           },
           {
               expand: true,
               flatten: true,
-              src: ['fonts/RobotoSlab/*'],
-              dest: 'sphinx_rtd_theme/static/fonts/RobotoSlab/',
+              src: ['fonts/Lato/*'],
+              dest: 'sphinx_rtd_theme/static/fonts/Lato/',
+              filter: 'isFile'
+          }
+        ]
+      },
+      images: {
+        files: [
+          {
+              expand: true,
+              flatten: true,
+              src: ['imgs/*'],
+              dest: 'sphinx_rtd_theme/static/imgs/',
               filter: 'isFile'
           }
         ]
@@ -184,6 +195,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-browserify');
 
-  grunt.registerTask('default', ['exec:bower_update','clean','copy:fonts','sass:dev','browserify:dev','usebanner','exec:build_sphinx','connect','open','watch']);
-  grunt.registerTask('build', ['exec:bower_update','clean','copy:fonts','sass:build','browserify:build','uglify','usebanner','exec:build_sphinx']);
+  grunt.registerTask('default', ['exec:bower_update','clean','copy:fonts','copy:images','sass:dev','browserify:dev','usebanner','exec:build_sphinx','connect','open','watch']);
+  grunt.registerTask('build', ['exec:bower_update','clean','copy:fonts','copy:images','sass:build','browserify:build','uglify','usebanner','exec:build_sphinx']);
 }

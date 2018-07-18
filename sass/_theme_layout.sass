@@ -25,6 +25,7 @@
 
 .wy-menu-vertical
   width: $nav-desktop-width
+  font-family: $custom-font-family2
 
   header, p.caption
     height: $base-font-size * 2
@@ -177,9 +178,9 @@
   margin-bottom: $gutter / 2
   input[type=text]
     width: 100%
-    border-radius: 50px
+    border-radius: 5px
     padding: 6px 12px
-    border-color: darken($link-color, 5%)
+    border-color: darken($nav-search-background-color, 5%)
   img
     display: block
     margin: auto auto $gutter / 2 auto
@@ -213,7 +214,7 @@
     margin-top: -1 * ($gutter / 4)
     margin-bottom: $gutter / 2
     font-weight: normal
-    color: rgba(255,255,255,.3)
+    color: rgba(255,255,255,.8)
 
 
 .wy-nav .wy-menu-vertical
@@ -276,7 +277,7 @@
 
 .wy-nav-top
   display: none
-  background: $link-color
+  background: $nav-search-background-color
   color: $white
   padding: $gutter / 4 $gutter / 2
   position: relative
@@ -303,13 +304,14 @@
 
 .wy-nav-content-wrap
   margin-left: $nav-desktop-width
-  background: $section-background-color
+  background: $section-background
   min-height: 100%
 
 .wy-nav-content
   padding: $gutter $gutter * 2
   height: 100%
   max-width: $nav-content-width
+  background: $section-background-color-light
   margin: auto
 
 .wy-body-mask
@@ -392,10 +394,10 @@ footer
 
 @media screen and (min-width: $nav-media-query)
   .wy-nav-content-wrap
-    background: rgba(0,0,0,.05)
+    background: $section-background
   .wy-nav-content
     margin: 0
-    background: $section-background-color
+    background: $section-background-color-light
 
 @media print
   .rst-versions, footer, .wy-nav-side
